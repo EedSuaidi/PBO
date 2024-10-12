@@ -47,7 +47,7 @@ while True:
         break
 
     elif menu == "1":
-        print("===== Kelola Debitur =====")
+        print("========== Kelola Debitur ==========")
         print("0. Kembali")
         print("1. Tampilkan Semua Debitur")
         print("2. Cari Debitur")
