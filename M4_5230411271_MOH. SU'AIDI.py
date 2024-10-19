@@ -8,7 +8,7 @@ class Debitur:
         return self.__ktp
     
     def display(self):
-        print(f"{self.nama}     -     {self.__ktp}     -     Rp. {"{:,.0f}".format(self._limit_pinjaman)}")
+        print(f"{self.nama}     -     {self.__ktp}     -     Rp. {'{:,.0f}'.format(self._limit_pinjaman)}")
 
 class Pinjaman(Debitur):
     def __init__(self, nama, ktp, limit_pinjaman, jumlah_pinjaman, suku_bunga, limit_waktu):
@@ -19,7 +19,7 @@ class Pinjaman(Debitur):
         self.angsuran = (jumlah_pinjaman * suku_bunga / 100) + (jumlah_pinjaman * suku_bunga / 100 / limit_waktu)
     
     def display(self):
-        print(f"{self.nama}     -     Rp. {"{:,.0f}".format(self.jumlah_pinjaman)}     -     {self.suku_bunga}     -     {self.limit_waktu}     -     Rp. {"{:,.0f}".format(self.angsuran)}")
+        print(f"{self.nama}     -     Rp. {'{:,.0f}'.format(self.jumlah_pinjaman)}     -     {self.suku_bunga}     -     {self.limit_waktu}     -     Rp. {'{:,.0f}'.format(self.angsuran)}")
 
 
 
