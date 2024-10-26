@@ -27,14 +27,14 @@ class Delivery(Order):
         print(f"ID Order: {self._id}")
         print(f"Name: {self.name}")
         print(f"Details: \n{self.details}")
-        print(f"Information: \n{self.information}")
+        print(f"Information: {self.information}")
         print(f"Date: {self.date}")
         print(f"Address: {self.address}")
 
 
 order1 = Order(1, "Solaria", "1 Nasi Goreng\n1 Es Jeruk")
 order2 = Order(2, "Gacoan", "2 Mie Gacoan\n2 Es Teh")
-order3 = Order(3, "Mbah Rejo", "5 Steak Ayam\n2 Es Teh\n 3 Air Putih")
+order3 = Order(3, "Mbah Rejo", "5 Steak Ayam\n2 Es Teh\n3 Air Putih")
 order4 = Order(4, "Hara Chicken", "2 Ayam Geprek\n2 Es Milo")
 order5 = Order(5, "Pizza Hut", "1 Splitza (Large)\n4 Coca-cola")
 
@@ -77,13 +77,12 @@ while True:
                 print(f"{i._id}          {i.name}")
             print("")
         elif submenu == "2":
-            name = input("Masukkan Nama Order Yang Ingin Dicari : ")
+            id = int(input("Masukkan ID Order Yang Ingin Dicari : "))
             print("")
             for i in list_order:
-                if i.name == name:
-                    print("========== Daftar Order ==========")
-                    print("ID         Name\n")
-                    print(f"{i._id}          {i.name}")
+                if i._id == id:
+                    print("========== Detail Order ==========\n")
+                    i.displayOrder()
                     print("")
                     break
             else:
@@ -106,13 +105,12 @@ while True:
                 print(f"{i._id}          {i.name}          {i.address}")
             print("")
         elif submenu == "2":
-            name = input("Masukkan Nama Delivery Yang Ingin Dicari : ")
+            id = int(input("Masukkan ID Delivery Yang Ingin Dicari : "))
             print("")
             for i in list_delivery:
-                if i.name == name:
-                    print("========== Daftar Delivery ==========")
-                    print("ID         Name         Address\n")
-                    print(f"{i._id}          {i.name}          {i.address}")
+                if i._id == id:
+                    print("========== Daftar Delivery ==========\n")
+                    i.displayDelivery()
                     print("")
                     break
             else:
