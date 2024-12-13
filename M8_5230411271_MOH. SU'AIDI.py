@@ -92,7 +92,10 @@ class MahasiswaApp:
             messagebox.showerror("Error", "IPK Harus Berupa Angka!")
             return
 
-        if ipk >= 4:
+        if ipk > 4:
+            messagebox.showerror("Error", "IPK Tidak Valid!")
+            return
+        elif ipk == 4:
             kategori = "Jenius"
         elif ipk >= 3:
             kategori = "Pintar"
