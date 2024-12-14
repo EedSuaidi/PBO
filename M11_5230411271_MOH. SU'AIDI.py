@@ -11,7 +11,7 @@ from sklearn.neural_network import MLPClassifier
 
 
 while True:
-    print("==================== Analisi Data ====================")
+    print("==================== Analisis Data ====================")
 
     nama_file = input("Masukkan Nama File Beserta Formatnya : ")
 
@@ -60,7 +60,8 @@ while True:
         print("")
 
     elif menu == "2":
-        model = KNeighborsClassifier()
+        n_neighbors = int(input("Masukkan N Neighbors : "))
+        model = KNeighborsClassifier(n_neighbors=n_neighbors)
         model.fit(x_train, y_train)
         pred = model.predict(x_test)
         accuracy = accuracy_score(y_test, pred)
@@ -72,7 +73,8 @@ while True:
         print("")
 
     elif menu == "3":
-        model = MLPClassifier()
+        hidden_layer_sizes = int(input("Masukkan Hidden Layer Sizes : "))
+        model = MLPClassifier(hidden_layer_sizes=hidden_layer_sizes)
         model.fit(x_train, y_train)
         pred = model.predict(x_test)
         accuracy = accuracy_score(y_test, pred)
